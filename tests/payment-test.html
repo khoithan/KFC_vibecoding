@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Module — Automated Test Suite & Sandbox</title>
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/payment.css">
+
+  <style>
+    body {
+      background-color: #F9FAFB;
+      padding: 30px 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .test-container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .test-header {
+      background: #FFFFFF;
+      padding: 24px 30px;
+      border-radius: 14px;
+      border: 1px solid #E5E7EB;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .test-title h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+    .test-title p {
+      color: #6B7280;
+      font-size: 0.9rem;
+    }
+    .stats-badge-group {
+      display: flex;
+      gap: 12px;
+    }
+    .stat-badge {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .stat-total { background: #F3F4F6; color: #374151; }
+    .stat-passed { background: #DCFCE7; color: #166534; }
+    .stat-failed { background: #FEE2E2; color: #991B1B; }
+    .stat-rate { background: #FEF3C7; color: #92400E; }
+    .stat-badge span:first-child { font-size: 1.3rem; line-height: 1.2; }
+
+    .sandbox-card {
+      background: linear-gradient(135deg, #FFF8F0 0%, #FFFFFF 100%);
+      border: 2px dashed #C8102E;
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .sandbox-info h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #C8102E;
+      margin-bottom: 4px;
+    }
+    .sandbox-info p {
+      color: #4B5563;
+      font-size: 0.88rem;
+    }
+
+    .suite-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      border: 1px solid #E5E7EB;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      margin-bottom: 18px;
+      overflow: hidden;
+    }
+    .suite-title {
+      background: #F9FAFB;
+      padding: 12px 20px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #374151;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .test-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .test-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      border-bottom: 1px solid #F3F4F6;
+      font-size: 0.88rem;
+    }
+    .test-row:last-child {
+      border-bottom: none;
+    }
+    .test-row.passed .test-icon {
+      color: #16A34A;
+      font-weight: 800;
+    }
+    .test-row.failed {
+      background-color: #FEF2F2;
+    }
+    .test-row.failed .test-icon {
+      color: #DC2626;
+      font-weight: 800;
+    }
+    .test-name {
+      color: #1F2937;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .test-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #9CA3AF;
+      font-size: 0.8rem;
+    }
+    .test-error {
+      color: #DC2626;
+      font-family: monospace;
+      font-size: 0.8rem;
+      padding: 6px 12px;
+      background: #FEE2E2;
+      border-radius: 4px;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="test-container">
+    <!-- Header -->
+    <header class="test-header">
+      <div class="test-title">
+        <h1>Báo Cáo Kiểm Thử Tự Động: Module Thanh Toán</h1>
+        <p>Kiểm thử nghiêm ngặt các hàm tính toán, xác thực dữ liệu, mô phỏng cổng thanh toán và bảo mật.</p>
+      </div>
+      <div class="stats-badge-group">
+        <div class="stat-badge stat-total"><span id="stat-total">-</span><small>Tổng số</small></div>
+        <div class="stat-badge stat-passed"><span id="stat-passed">-</span><small>Thành công</small></div>
+        <div class="stat-badge stat-failed"><span id="stat-failed">-</span><small>Thất bại</small></div>
+        <div class="stat-badge stat-rate"><span id="stat-rate">-%</span><small>Tỷ lệ</small></div>
+      </div>
+    </header>
+
+    <!-- Interactive Sandbox -->
+    <section class="sandbox-card">
+      <div class="sandbox-info">
+        <h3>🍗 Thử nghiệm trực quan (Interactive Sandbox)</h3>
+        <p>Mở giao diện thanh toán popup với Giỏ hàng mẫu (2 phần gà giòn + 1 khoai tây chiên) để trải nghiệm quy trình 3 bước.</p>
+      </div>
+      <button type="button" class="btn btn-primary" id="open-sandbox-btn">
+        <span>🚀 Mở Giao Diện Thanh Toán</span>
+      </button>
+    </section>
+
+    <!-- Test Suites Output -->
+    <main id="suites-container">
+      <div style="text-align: center; padding: 40px; color: #6B7280;">
+        <div class="spinner"></div>
+        <p>Đang thực thi các test case tự động...</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/payment-module.js"></script>
+  <script src="payment-test-suite.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Chạy test suite
+      const report = await PaymentTestSuite.runAllTests();
+
+      // Cập nhật thống kê header
+      document.getElementById('stat-total').textContent = report.summary.total;
+      document.getElementById('stat-passed').textContent = report.summary.passed;
+      document.getElementById('stat-failed').textContent = report.summary.failed;
+      document.getElementById('stat-rate').textContent = report.summary.successRate;
+
+      // Render danh sách Suites
+      const container = document.getElementById('suites-container');
+      container.innerHTML = '';
+
+      // Gom nhóm theo suite
+      const grouped = {};
+      report.results.forEach(res => {
+        if (!grouped[res.suite]) grouped[res.suite] = [];
+        grouped[res.suite].push(res);
+      });
+
+      Object.keys(grouped).forEach(suiteName => {
+        const suiteCard = document.createElement('div');
+        suiteCard.className = 'suite-card';
+
+        const titleDiv = document.createElement('div');
+        titleDiv.className = 'suite-title';
+        titleDiv.textContent = suiteName;
+        suiteCard.appendChild(titleDiv);
+
+        const list = document.createElement('ul');
+        list.className = 'test-list';
+
+        grouped[suiteName].forEach(t => {
+          const li = document.createElement('li');
+          li.className = `test-row ${t.passed ? 'passed' : 'failed'}`;
+
+          const nameCol = document.createElement('div');
+          nameCol.className = 'test-name-col';
+
+          const nameWrap = document.createElement('div');
+          nameWrap.className = 'test-name';
+          nameWrap.innerHTML = `<span class="test-icon">${t.passed ? '✓' : '✗'}</span> <span>${t.name}</span>`;
+          nameCol.appendChild(nameWrap);
+
+          if (!t.passed && t.error) {
+            const errDiv = document.createElement('div');
+            errDiv.className = 'test-error';
+            errDiv.textContent = `Lỗi: ${t.error}`;
+            nameCol.appendChild(errDiv);
+          }
+
+          const metaDiv = document.createElement('div');
+          metaDiv.className = 'test-meta';
+          metaDiv.textContent = `${t.duration}ms`;
+
+          li.appendChild(nameCol);
+          li.appendChild(metaDiv);
+          list.appendChild(li);
+        });
+
+        suiteCard.appendChild(list);
+        container.appendChild(suiteCard);
+      });
+
+      // Nút mở Sandbox tương tác
+      const sandboxBtn = document.getElementById('open-sandbox-btn');
+      if (sandboxBtn) {
+        sandboxBtn.addEventListener('click', () => {
+          const sampleCart = [
+            { id: 'P001', name: 'Gà rán giòn cay', price: 45000, quantity: 2, image: '../assets/images/chicken-bucket.svg' },
+            { id: 'P004', name: 'Khoai tây chiên', price: 25000, quantity: 1, image: '../images/products/khoai-tay-chien.jpg' }
+          ];
+
+          PaymentModule.open({
+            items: sampleCart
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

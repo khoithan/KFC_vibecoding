@@ -1,0 +1,6 @@
+id,title,description,label,valid_until,active
+D001,Ưu đãi Giờ Vàng Thứ Ba,Mua 1 tặng 1 gà rán giòn cay khi mua combo bất kỳ trong khung giờ 14h - 17h,ƯU ĐÃI,2026-12-31,true
+D002,Combo Học Sinh Sinh Viên,Giảm 20% cho combo gà rán khi xuất trình thẻ học sinh hoặc sinh viên (áp dụng demo),GIẢM GIÁ,2026-12-31,true
+D003,Freeship Giao Hàng Tận Nơi,Miễn phí giao hàng cho tất cả đơn hàng demo trị giá từ 150.000 đ,FREESHIP,,true
+D004,Tiệc Gà Cuối Tuần,Tặng ngay 1 phần khoai tây chiên giòn thơm khi đặt Combo Gia Đình,QUÀ TẶNG,2026-11-30,true
+D005,Ưu đãi hết hạn mẫu,Ưu đãi này để kiểm tra bộ lọc active false không hiển thị,HẾT HẠN,2025-01-01,false

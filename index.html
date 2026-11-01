@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KFC Promo Landing Page — Khám phá combo gà rán giòn rụm, ưu đãi đặc biệt và trải nghiệm đặt món tiện lợi (Bản demo học tập frontend).">
+  <title>Gà Rán Giòn Rụm — KFC Promo Landing Page (Demo)</title>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/cart.css">
+  <link rel="stylesheet" href="assets/css/payment.css">
+  
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/png" href="images/KFC_logo-image.png">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="#hero" class="brand-link" aria-label="Trang chủ Gà Rán Giòn Rụm">
+        <img src="images/KFC_logo-image.png" alt="KFC Demo Logo" class="brand-logo-img">
+        <div class="brand-text-wrap">
+          <span class="brand-title">GÀ RÁN GIÒN</span>
+          <span class="brand-badge">Demo Học Tập</span>
+        </div>
+      </a>
+
+      <!-- Navigation links -->
+      <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="Điều hướng chính">
+        <a href="#hero" class="nav-link">Trang chủ</a>
+        <a href="#menu" class="nav-link">Thực đơn</a>
+        <a href="#promotions" class="nav-link">Ưu đãi</a>
+        <a href="#about" class="nav-link">Về chúng tôi</a>
+        <a href="#order" class="nav-link">Đặt món demo</a>
+        <button type="button" class="btn btn-secondary btn-sm nav-cart-btn" id="nav-cart-btn" onclick="CartModule.openDrawer()" aria-label="Mở giỏ hàng">
+          🛒 Giỏ hàng (<span id="nav-cart-count">0</span>)
+        </button>
+        <a href="#menu" class="btn btn-primary btn-sm">Khám phá combo</a>
+      </nav>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="nav-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main role="main">
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section" id="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="section-tag">🔥 Đậm Đà Hương Vị Mới</span>
+          <h1 class="hero-headline" id="hero-title">
+            Giòn rụm từng miếng — <span class="hero-highlight">Vui trọn từng khoảnh khắc</span>
+          </h1>
+          <p class="hero-description">
+            Thưởng thức hương vị gà rán vàng giòn chuẩn vị, thấm đẫm sốt thơm cay và các combo ưu đãi hấp dẫn dành riêng cho bữa tiệc sum họp của bạn hôm nay.
+          </p>
+          <div class="hero-actions">
+            <a href="#order" class="btn btn-primary">Đặt combo ngay</a>
+            <a href="#menu" class="btn btn-secondary">Xem toàn bộ thực đơn</a>
+          </div>
+          <div class="hero-features">
+            <div class="feature-pill">
+              <span class="feature-pill-icon" aria-hidden="true">🍗</span>
+              <span>100% Gà Tươi Mới</span>
+            </div>
+            <div class="feature-pill">
+              <span class="feature-pill-icon" aria-hidden="true">🌶️</span>
+              <span>Gia Vị Bí Quyết</span>
+            </div>
+            <div class="feature-pill">
+              <span class="feature-pill-icon" aria-hidden="true">⚡</span>
+              <span>Giao Nhanh Tiện Lợi</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-wrapper">
+            <img src="assets/images/hero-chicken.svg" alt="Miếng gà rán giòn rụm thơm ngon minh họa">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURED PRODUCTS / MENU ==================== -->
+    <section class="menu-section" id="menu" aria-labelledby="menu-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Thực Đơn Hấp Dẫn</span>
+          <h2 class="section-title" id="menu-title">Món Ngon Nóng Hổi Sẵn Sàng Phục Vụ</h2>
+          <p class="section-desc">Chọn ngay những món ăn yêu thích từ gà rán giòn tan, burger đầy đặn đến các combo tiết kiệm cho nhóm bạn.</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="filter-container" role="group" aria-label="Bộ lọc danh mục món ăn">
+          <button type="button" class="filter-btn active" data-category="all" aria-pressed="true">Tất cả món</button>
+          <button type="button" class="filter-btn" data-category="chicken" aria-pressed="false">Gà rán giòn</button>
+          <button type="button" class="filter-btn" data-category="combo" aria-pressed="false">Combo ưu đãi</button>
+          <button type="button" class="filter-btn" data-category="burger" aria-pressed="false">Burger</button>
+          <button type="button" class="filter-btn" data-category="side" aria-pressed="false">Món ăn kèm</button>
+          <button type="button" class="filter-btn" data-category="drink" aria-pressed="false">Thức uống</button>
+        </div>
+
+        <!-- Products Grid (Rendered by JS from CSV) -->
+        <div class="products-grid" id="products-grid" aria-live="polite">
+          <!-- Sẽ được render động qua JavaScript từ products.csv -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROMOTIONS SECTION ==================== -->
+    <section class="promotions-section" id="promotions" aria-labelledby="promotions-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Chương Trình Ưu Đãi</span>
+          <h2 class="section-title" id="promotions-title">Combo Tiết Kiệm — Thưởng Thức Thả Ga</h2>
+          <p class="section-desc">Tổng hợp các chương trình ưu đãi minh họa đặc sắc đang áp dụng trong phiên bản thử nghiệm.</p>
+        </div>
+
+        <!-- Promotions Grid (Rendered by JS from CSV) -->
+        <div class="promotions-grid" id="promotions-grid" aria-live="polite">
+          <!-- Sẽ được render động qua JavaScript từ promotions.csv -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT / STORY SECTION ==================== -->
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-card">
+          <div class="about-grid">
+            <div class="about-content">
+              <span class="section-tag">Câu Chuyện Món Ăn</span>
+              <h2 id="about-title">Hương Vị Tạo Nên Khoảnh Khắc Gắn Kết</h2>
+              <p>
+                Những miếng gà rán vàng ươm, lớp vỏ giòn rụm rôm rốp và từng thớ thịt mềm ngọt mọng nước luôn là chất xúc tác tuyệt vời cho mọi buổi tụ tập bạn bè, sum vầy gia đình hay những phút giây thư giãn một mình.
+              </p>
+              <p>
+                Với công thức tẩm ướp hòa quyện cùng kỹ thuật chiên chuẩn độ, mỗi phần ăn đều mang lại trải nghiệm vị giác đầy thỏa mãn và trọn vẹn niềm vui.
+              </p>
+              
+              <!-- Disclaimer Card -->
+              <div class="about-disclaimer" role="note">
+                <strong>⚠️ Thông báo bản quyền & mục đích giáo dục:</strong>
+                <p>
+                  Đây là giao diện landing page mô phỏng cho đồ án học tập và thực hành lập trình Web Frontend (HTML, CSS, Vanilla JS, đọc dữ liệu CSV tĩnh). Trang web này <strong>không phải website chính thức</strong> của thương hiệu KFC và không trực tiếp đại diện cho thương hiệu KFC hoặc nhà hàng KFC. Mọi thông tin giá, combo và ưu đãi đều mang tính chất minh họa học tập.
+                </p>
+              </div>
+            </div>
+
+            <div class="about-illustration">
+              <img src="assets/images/chicken-bucket.svg" alt="Xô gà rán giòn rụm tươi ngon minh họa">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ORDER DEMO SECTION ==================== -->
+    <section class="order-section" id="order" aria-labelledby="order-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Trải Nghiệm Đặt Món</span>
+          <h2 class="section-title" id="order-title">Đặt Món Trực Tuyến (Mô Phỏng Demo)</h2>
+          <p class="section-desc">Chọn món ăn bạn thích để kiểm tra quy trình xác thực dữ liệu và phản hồi đơn hàng mẫu ngay trên trình duyệt.</p>
+        </div>
+
+        <div class="order-wrapper">
+          <form class="order-form" id="order-form" novalidate>
+            <!-- Tên người đặt -->
+            <div class="form-group">
+              <label for="customer-name" class="form-label">Tên người nhận (tùy chọn):</label>
+              <input type="text" id="customer-name" name="customerName" class="form-input" placeholder="Ví dụ: Nguyễn Văn A" maxlength="60">
+              <span class="form-help">Bạn có thể để trống hoặc nhập tên để hiển thị trên hóa đơn demo.</span>
+            </div>
+
+            <!-- Món ăn & Số lượng -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="product-select" class="form-label">Chọn món hoặc Combo: <span class="required">*</span></label>
+                <select id="product-select" name="productId" class="form-select" required>
+                  <option value="">-- Đang nạp danh sách món ăn... --</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="quantity" class="form-label">Số lượng: <span class="required">*</span></label>
+                <input type="number" id="quantity" name="quantity" class="form-input" min="1" max="99" value="1" required>
+              </div>
+            </div>
+
+            <!-- Ghi chú thêm -->
+            <div class="form-group">
+              <label for="order-notes" class="form-label">Ghi chú khẩu vị (tùy chọn):</label>
+              <textarea id="order-notes" name="notes" class="form-textarea" rows="3" placeholder="Ví dụ: Lấy thêm tương cà, bỏ đá riêng, không cay..." maxlength="200"></textarea>
+            </div>
+
+            <!-- Thông báo phản hồi Form -->
+            <div id="form-feedback" class="form-feedback" role="alert" aria-live="assertive"></div>
+
+            <!-- Nút gửi Form -->
+            <div class="order-actions">
+              <button type="submit" class="btn btn-primary btn-block">
+                <span>🍗 Xác nhận đặt món demo</span>
+              </button>
+            </div>
+
+            <!-- Nút mở lịch sử demo đã lưu trong LocalStorage -->
+            <div class="history-toggle-wrap">
+              <button type="button" class="btn btn-secondary btn-sm" id="view-history-btn">
+                <span>🕒 Xem các đơn hàng demo đã lưu</span>
+              </button>
+            </div>
+
+            <!-- Khung lịch sử đơn hàng demo (LocalStorage) -->
+            <div class="demo-history-container" id="demo-history-container">
+              <div class="history-top">
+                <span class="history-title">Đơn demo đã lưu trên trình duyệt (tối đa 10):</span>
+                <button type="button" class="btn btn-secondary btn-sm" id="clear-history-btn">Xóa lịch sử</button>
+              </div>
+              <ul class="history-list" id="history-list">
+                <!-- Render bởi JS -->
+              </ul>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== CONFIRMATION MODAL ==================== -->
+  <div class="modal-backdrop" id="order-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-window">
+      <button type="button" class="modal-close" id="modal-close-btn" aria-label="Đóng cửa sổ">&times;</button>
+      
+      <div class="modal-icon-wrap">
+        <span class="modal-icon" aria-hidden="true">✓</span>
+      </div>
+
+      <h3 class="modal-title" id="modal-title">Ghi Nhận Đơn Mẫu Thành Công!</h3>
+
+      <div class="modal-alert" role="alert">
+        <strong>⚠️ Lưu ý quan trọng:</strong> Đây là bản mô phỏng demo phục vụ mục đích học tập. Đơn hàng chỉ được ghi nhận trong trình duyệt của bạn và <strong>không được gửi tới bất kỳ cửa hàng KFC nào</strong>. Không có giao dịch tài chính hoặc giao hàng thực tế diễn ra.
+      </div>
+
+      <div id="modal-details">
+        <!-- Render danh sách chi tiết đơn hàng bởi JS -->
+      </div>
+
+      <button type="button" class="btn btn-primary btn-block" id="modal-done-btn">Đã hiểu & Đóng</button>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Gà Rán Giòn Rụm</h3>
+          <p>Dự án landing page mô phỏng trải nghiệm đặt món thức ăn nhanh, xây dựng hoàn toàn bằng HTML5, CSS3 và JavaScript thuần.</p>
+          <p><strong>Nguồn dữ liệu:</strong> Tĩnh từ file CSV (UTF-8) không thông qua máy chủ backend.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Điều hướng nhanh</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Trang chủ</a></li>
+            <li><a href="#menu">Thực đơn đặc sắc</a></li>
+            <li><a href="#promotions">Khuyến mãi & Combo</a></li>
+            <li><a href="#about">Về dự án demo</a></li>
+            <li><a href="#order">Đặt món thử nghiệm</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Thông tin mô phỏng</h4>
+          <ul class="footer-contact">
+            <li>📍 <strong>Địa chỉ demo:</strong> 123 Phố Ẩm Thực, Quận 1, TP. Hồ Chí Minh</li>
+            <li>⏰ <strong>Giờ phục vụ mô phỏng:</strong> 09:00 - 22:00 mỗi ngày</li>
+            <li>📞 <strong>Hotline demo:</strong> 1900 0000 (Mẫu)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="disclaimer-box">
+          <strong>TUYÊN BỐ MIỄN TRỪ TRÁCH NHIỆM:</strong> Website này là sản phẩm đồ án học tập cá nhân / fan-made nhằm mục đích rèn luyện kỹ năng lập trình web frontend (HTML/CSS/JS thuần và xử lý tệp tin CSV). Dự án này hoàn toàn phi thương mại, không liên kết, không được tài trợ hoặc bảo trợ bởi KFC Corporation hay bất kỳ chi nhánh KFC nào tại Việt Nam hoặc toàn cầu.
+        </div>
+        <p class="copyright">&copy; 2026 Gà Rán Giòn Rụm — Frontend Educational Demo. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT MODULES ==================== -->
+  <script src="assets/js/csv-parser.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/cart-module.js"></script>
+  <script src="assets/js/payment-module.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

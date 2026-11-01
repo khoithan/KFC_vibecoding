@@ -1,0 +1,9 @@
+id,name,category,description,price,image,featured,available
+P001,Gà rán giòn cay,chicken,Gà rán giòn với lớp vỏ đậm vị ớt và tiêu thơm lừng,45000,assets/images/chicken-bucket.svg,true,true
+P002,Combo vui vẻ,combo,Phần ăn gồm 2 miếng gà rán giòn và 1 phần khoai tây chiên,89000,assets/images/hero-chicken.svg,true,true
+P003,Burger gà giòn,burger,Burger gà giòn kẹp rau xà lách tươi và sốt mayonnaise béo ngậy,59000,assets/images/burger.svg,false,true
+P004,Khoai tây chiên,side,Khoai tây chiên vàng giòn rụm chấm tương cà đậm đà,25000,images/products/khoai-tay-chien.jpg,false,true
+P005,Combo gia đình sum vầy,combo,Gồm 4 miếng gà rán + 1 burger gà + 2 khoai tây chiên + 2 nước ngọt,199000,assets/images/chicken-bucket.svg,true,true
+P006,Pepsi lon mát lạnh,drink,Nước ngọt có gas sảng khoái 330ml mát lạnh xua tan nắng nóng,18000,assets/images/drink.svg,false,true
+P007,Gà sốt đậu tỏi thơm,chicken,Gà rán phủ sốt đậu cay ngọt đậm đà chuẩn vị gà rán phong cách mới,49000,assets/images/chicken-bucket.svg,true,true
+P008,Burger tôm giòn sốt tartar,burger,Burger tôm chiên giòn rụm kết hợp sốt tartar chua béo thanh mát,65000,assets/images/burger.svg,false,true

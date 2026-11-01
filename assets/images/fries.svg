@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fryGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="60%" stop-color="#EAB308"/>
+      <stop offset="100%" stop-color="#CA8A04"/>
+    </linearGradient>
+    <linearGradient id="fryGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="70%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C8102E"/>
+      <stop offset="35%" stop-color="#E51E3D"/>
+      <stop offset="70%" stop-color="#C8102E"/>
+      <stop offset="100%" stop-color="#8F0D22"/>
+    </linearGradient>
+    <filter id="fryShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Shadow -->
+  <ellipse cx="120" cy="214" rx="60" ry="12" fill="#000000" opacity="0.14"/>
+
+  <!-- Back Fries -->
+  <g>
+    <!-- Fry 1 -->
+    <rect x="75" y="45" width="14" height="95" rx="3" transform="rotate(-18 82 92)" fill="url(#fryGrad2)"/>
+    <!-- Fry 2 -->
+    <rect x="100" y="32" width="15" height="110" rx="3" transform="rotate(-5 107 87)" fill="url(#fryGrad1)"/>
+    <!-- Fry 3 -->
+    <rect x="122" y="30" width="16" height="115" rx="3" transform="rotate(4 130 87)" fill="url(#fryGrad2)"/>
+    <!-- Fry 4 -->
+    <rect x="146" y="42" width="15" height="100" rx="3" transform="rotate(16 153 92)" fill="url(#fryGrad1)"/>
+    <!-- Fry 5 (far left tilted) -->
+    <rect x="62" y="62" width="13" height="85" rx="3" transform="rotate(-26 68 104)" fill="url(#fryGrad1)"/>
+    <!-- Fry 6 (far right tilted) -->
+    <rect x="160" y="60" width="14" height="90" rx="3" transform="rotate(24 167 105)" fill="url(#fryGrad2)"/>
+  </g>
+
+  <!-- Front Fry details -->
+  <rect x="90" y="55" width="15" height="95" rx="3" transform="rotate(-8 97 102)" fill="url(#fryGrad1)"/>
+  <rect x="112" y="48" width="15" height="100" rx="3" transform="rotate(3 119 98)" fill="url(#fryGrad2)"/>
+  <rect x="134" y="58" width="15" height="95" rx="3" transform="rotate(10 141 105)" fill="url(#fryGrad1)"/>
+
+  <!-- Salt specks -->
+  <circle cx="85" cy="42" r="1.5" fill="#FFFFFF"/>
+  <circle cx="108" cy="30" r="1.5" fill="#FFFFFF"/>
+  <circle cx="132" cy="28" r="1.5" fill="#FFFFFF"/>
+  <circle cx="155" cy="40" r="1.5" fill="#FFFFFF"/>
+  <circle cx="98" cy="65" r="1.5" fill="#FFFFFF"/>
+
+  <!-- Fry Carton Box (Red) -->
+  <path d="M 60,118 
+           L 72,212 C 73,214 78,216 85,216 
+           L 155,216 C 162,216 167,214 168,212 
+           L 180,118 
+           C 155,134 140,126 120,136 
+           C 100,126 85,134 60,118 Z" 
+        fill="url(#boxGrad)" filter="url(#fryShadow)"/>
+
+  <!-- Arc cutout on box top lip -->
+  <path d="M 60,118 C 85,138 155,138 180,118 C 158,130 82,130 60,118 Z" fill="#8F0D22" opacity="0.4"/>
+
+  <!-- White Emblem / Accent on carton -->
+  <path d="M 95,160 Q 120,150 145,160 L 140,195 Q 120,198 100,195 Z" fill="#FFFFFF" opacity="0.95"/>
+  <polygon points="120,165 123,173 131,173 125,178 127,186 120,181 113,186 115,178 109,173 117,173" fill="#FFC72C"/>
+</svg>

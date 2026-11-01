@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cupGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="30%" stop-color="#2563EB"/>
+      <stop offset="70%" stop-color="#1D4ED8"/>
+      <stop offset="100%" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="strawGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+    <filter id="drinkShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Shadow -->
+  <ellipse cx="120" cy="216" rx="55" ry="11" fill="#000000" opacity="0.15"/>
+
+  <!-- Straw sticking out -->
+  <path d="M 132,15 L 144,15 L 132,82 L 120,82 Z" fill="url(#strawGrad)" transform="rotate(12 132 50)"/>
+  <!-- Bend stripes on straw -->
+  <line x1="124" y1="36" x2="136" y2="39" stroke="#EF4444" stroke-width="3"/>
+  <line x1="126" y1="46" x2="138" y2="49" stroke="#EF4444" stroke-width="3"/>
+
+  <!-- Cup body -->
+  <path d="M 68,82 L 80,208 C 81,213 86,216 94,216 L 146,216 C 154,216 159,213 160,208 L 172,82 Z" fill="url(#cupGrad)" filter="url(#drinkShadow)"/>
+
+  <!-- Condensation droplets -->
+  <ellipse cx="98" cy="120" rx="3" ry="5" fill="#93C5FD" opacity="0.6"/>
+  <ellipse cx="106" cy="155" rx="2.5" ry="4" fill="#93C5FD" opacity="0.6"/>
+  <ellipse cx="148" cy="135" rx="3" ry="5" fill="#93C5FD" opacity="0.6"/>
+  <ellipse cx="138" cy="178" rx="2.5" ry="4" fill="#93C5FD" opacity="0.6"/>
+
+  <!-- Cup graphic / swirl wave -->
+  <path d="M 72,120 Q 120,150 168,120 L 165,150 Q 120,180 75,150 Z" fill="#FFFFFF" opacity="0.9"/>
+  <path d="M 73,128 Q 120,158 167,128 L 166,138 Q 120,168 74,138 Z" fill="#DC2626"/>
+
+  <!-- Cup Lid -->
+  <ellipse cx="120" cy="82" rx="56" ry="12" fill="#E5E7EB"/>
+  <ellipse cx="120" cy="80" rx="54" ry="10" fill="#FFFFFF"/>
+  <ellipse cx="120" cy="78" rx="42" ry="7" fill="#F3F4F6"/>
+  <ellipse cx="120" cy="76" rx="20" ry="4" fill="#D1D5DB"/>
+  <circle cx="125" cy="76" r="3.5" fill="#1F2937"/>
+</svg>

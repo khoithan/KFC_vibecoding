@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bucketGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C8102E"/>
+      <stop offset="30%" stop-color="#E51E3D"/>
+      <stop offset="70%" stop-color="#C8102E"/>
+      <stop offset="100%" stop-color="#8F0D22"/>
+    </linearGradient>
+    <linearGradient id="chickenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFBE53"/>
+      <stop offset="50%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+    <linearGradient id="chickenGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="60%" stop-color="#B45309"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Shadow below bucket -->
+  <ellipse cx="120" cy="216" rx="72" ry="14" fill="#000000" opacity="0.12"/>
+
+  <!-- Chicken pieces in bucket -->
+  <!-- Left drumstick -->
+  <g transform="rotate(-25 80 90)">
+    <path d="M 60,65 C 50,45 75,30 90,45 C 105,60 100,85 85,95 C 75,100 65,85 60,65 Z" fill="url(#chickenGrad2)"/>
+    <ellipse cx="78" cy="50" rx="6" ry="4" fill="#FEF3C7" opacity="0.5"/>
+    <!-- bone end -->
+    <path d="M 52,70 C 44,72 42,85 50,88 C 55,89 58,82 56,76 Z" fill="#FDE68A"/>
+    <circle cx="46" cy="80" r="4" fill="#F3F4F6"/>
+    <circle cx="50" cy="86" r="4" fill="#E5E7EB"/>
+  </g>
+
+  <!-- Right drumstick -->
+  <g transform="rotate(22 155 85)">
+    <path d="M 140,60 C 130,40 155,25 170,40 C 185,55 180,80 165,90 C 155,95 145,80 140,60 Z" fill="url(#chickenGrad)"/>
+    <ellipse cx="158" cy="45" rx="6" ry="4" fill="#FEF3C7" opacity="0.5"/>
+    <!-- bone end -->
+    <path d="M 172,70 C 180,72 182,85 174,88 C 169,89 166,82 168,76 Z" fill="#FDE68A"/>
+    <circle cx="178" cy="80" r="4" fill="#F3F4F6"/>
+    <circle cx="174" cy="86" r="4" fill="#E5E7EB"/>
+  </g>
+
+  <!-- Center chicken mass -->
+  <path d="M 85,90 C 70,70 110,40 135,55 C 160,45 175,75 160,95 C 145,105 95,105 85,90 Z" fill="url(#chickenGrad)"/>
+  <circle cx="105" cy="72" r="3" fill="#FEF3C7" opacity="0.6"/>
+  <circle cx="138" cy="68" r="4" fill="#FEF3C7" opacity="0.6"/>
+  <circle cx="120" cy="82" r="3.5" fill="#78350F" opacity="0.4"/>
+
+  <!-- Crispy crumbles -->
+  <circle cx="72" cy="78" r="2.5" fill="#F59E0B"/>
+  <circle cx="168" cy="82" r="2" fill="#F59E0B"/>
+  <circle cx="125" cy="52" r="2" fill="#FCD34D"/>
+
+  <!-- Bucket Body -->
+  <path d="M 52,105 L 68,205 C 69,210 75,214 85,214 L 155,214 C 165,214 171,210 172,205 L 188,105 Z" fill="url(#bucketGrad)" filter="url(#shadow)"/>
+
+  <!-- White stripes on bucket -->
+  <!-- Stripe 1 -->
+  <path d="M 82,105 L 90,214 L 102,214 L 96,105 Z" fill="#FFFFFF"/>
+  <!-- Stripe 2 -->
+  <path d="M 114,105 L 115,214 L 125,214 L 126,105 Z" fill="#FFFFFF"/>
+  <!-- Stripe 3 -->
+  <path d="M 144,105 L 138,214 L 150,214 L 158,105 Z" fill="#FFFFFF"/>
+
+  <!-- Bucket Rim -->
+  <ellipse cx="120" cy="105" rx="68" ry="12" fill="#E51E3D"/>
+  <ellipse cx="120" cy="103" rx="66" ry="10" fill="#FFFFFF"/>
+  <ellipse cx="120" cy="102" rx="62" ry="8" fill="#8F0D22" opacity="0.4"/>
+
+  <!-- Emblem on bucket -->
+  <circle cx="120" cy="158" r="22" fill="#FFFFFF" stroke="#FFC72C" stroke-width="2.5"/>
+  <circle cx="120" cy="158" r="18" fill="#C8102E"/>
+  <text x="120" y="164" font-family="Arial, sans-serif" font-weight="900" font-size="14" fill="#FFFFFF" text-anchor="middle">CRISPY</text>
+
+  <!-- Accent stars -->
+  <polygon points="120,132 122,137 127,137 123,140 125,145 120,142 115,145 117,140 113,137 118,137" fill="#FFC72C"/>
+</svg>

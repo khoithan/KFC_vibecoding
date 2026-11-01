@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="topBun" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="60%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="bottomBun" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="pattyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="40%" stop-color="#B45309"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+    <filter id="burgerShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Shadow -->
+  <ellipse cx="120" cy="205" rx="75" ry="12" fill="#000000" opacity="0.15"/>
+
+  <!-- Bottom Bun -->
+  <path d="M 52,175 C 52,192 78,198 120,198 C 162,198 188,192 188,175 L 188,170 C 188,168 185,166 180,166 L 60,166 C 55,166 52,168 52,170 Z" fill="url(#bottomBun)" filter="url(#burgerShadow)"/>
+
+  <!-- Crispy Chicken Patty -->
+  <path d="M 45,150 
+           C 50,140 60,148 75,142 
+           C 90,136 105,144 120,138 
+           C 135,144 150,138 165,144 
+           C 180,138 190,146 195,152 
+           C 200,160 190,168 175,166 
+           C 160,170 140,164 120,168 
+           C 100,164 80,170 65,166 
+           C 50,168 40,160 45,150 Z" 
+        fill="url(#pattyGrad)"/>
+  <circle cx="85" cy="152" r="3" fill="#FDE68A" opacity="0.7"/>
+  <circle cx="145" cy="154" r="3" fill="#FEF3C7" opacity="0.7"/>
+
+  <!-- Melted Cheese Layer -->
+  <polygon points="50,146 190,146 182,156 160,154 148,165 130,154 100,166 90,152 65,162" fill="#FFC72C"/>
+
+  <!-- Fresh Red Tomato Slices -->
+  <rect x="58" y="134" width="58" height="13" rx="5" fill="#EF4444"/>
+  <rect x="124" y="134" width="58" height="13" rx="5" fill="#DC2626"/>
+
+  <!-- Crispy Green Lettuce Layer -->
+  <path d="M 42,130 
+           Q 52,118 64,128 
+           Q 76,116 90,127 
+           Q 104,115 120,126 
+           Q 136,115 150,127 
+           Q 164,116 176,128 
+           Q 188,118 198,130 
+           Q 175,138 120,138 
+           Q 65,138 42,130 Z" 
+        fill="#22C55E"/>
+  <path d="M 46,131 Q 54,124 64,130 Q 84,120 100,129 Q 120,122 140,129 Q 160,121 176,130 Q 186,125 194,131" stroke="#16A34A" stroke-width="2" fill="none"/>
+
+  <!-- Top Bun (Dome) -->
+  <path d="M 46,122 C 46,65 72,52 120,52 C 168,52 194,65 194,122 C 194,126 190,128 180,128 L 60,128 C 50,128 46,126 46,122 Z" fill="url(#topBun)"/>
+  
+  <!-- Top Bun Highlight -->
+  <path d="M 70,72 C 85,62 110,60 140,62 C 130,56 100,56 80,64 Z" fill="#FFFFFF" opacity="0.4"/>
+
+  <!-- White Sesame Seeds -->
+  <ellipse cx="85" cy="78" rx="4" ry="2.2" transform="rotate(-15 85 78)" fill="#FEF3C7"/>
+  <ellipse cx="115" cy="68" rx="4" ry="2.2" transform="rotate(20 115 68)" fill="#FEF3C7"/>
+  <ellipse cx="145" cy="74" rx="4" ry="2.2" transform="rotate(-25 145 74)" fill="#FEF3C7"/>
+  <ellipse cx="100" cy="92" rx="4" ry="2.2" transform="rotate(35 100 92)" fill="#FEF3C7"/>
+  <ellipse cx="135" cy="90" rx="4" ry="2.2" transform="rotate(-10 135 90)" fill="#FEF3C7"/>
+  <ellipse cx="165" cy="94" rx="4" ry="2.2" transform="rotate(15 165 94)" fill="#FEF3C7"/>
+  <ellipse cx="70" cy="98" rx="4" ry="2.2" transform="rotate(-30 70 98)" fill="#FEF3C7"/>
+</svg>
